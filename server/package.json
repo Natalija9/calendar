@@ -1,0 +1,22 @@
+{
+  "name": "levi9-calendar",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "12.0.8",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "express": "^4.17.2",
+    "mongodb": "^4.2.0",
+    "mongoose": "^5.13.13"
+  },
+  "devDependencies": {
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8"
+  }
+}
