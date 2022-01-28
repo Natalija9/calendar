@@ -8,7 +8,7 @@ const getAllMeetings = async () => {
 };
 
 const getMeetingById = async (id) => {
-    const meeting = await Meeting.findOne({ meeting_id: id}).exec();
+    const meeting = await Meeting.findOne({ _id: id}).exec();
     return meeting;
 };
 
@@ -17,9 +17,8 @@ const getMeetingsByDate = async (date) => {
   return meetings;
 };
 
-const createNewMeeting = async (meeting_id, title, description, time, date, participants) => {
+const createNewMeeting = async (title, description, time, date, participants) => {
     const newMeeting = new Meeting({
-        meeting_id,
         title,
         description,
         time,
@@ -33,7 +32,7 @@ const createNewMeeting = async (meeting_id, title, description, time, date, part
 }
 
 const deleteMeeting = async (id) => {
-  await Meeting.findOneAndDelete({ meeting_id: id }).exec();
+  await Meeting.findOneAndDelete({ _id: id }).exec();
 }
 
 module.exports = {

@@ -5,12 +5,12 @@ const getAllMeetings = async (req, res, next) => {
         const allMeetings = await meetingsService.getAllMeetings();
         res.status(200).json(allMeetings);
     } catch (error) {
-        next(errot);
+        next(error);
     }
 };
 
 const getMeetingById = async (req, res, next) => {
-    const id = req.params.meeting_id;
+    const id = req.params.id;
 
     try {
         if (id === undefined) {
@@ -42,11 +42,10 @@ const getMeetingsByDate = async (req, res, next) => {
 };
 
 const createNewMeeting = async (req, res, next) => {
-    const { meeting_id, title, description, time, date, participants} = req.body;
+    const { title, description, time, date, participants} = req.body;
 
     try {
-        if (!meeting_id ||
-            !title ||
+        if (!title ||
             !description ||
             !time ||
             !date ||
@@ -58,7 +57,7 @@ const createNewMeeting = async (req, res, next) => {
         }
 
         const newMeeting = await meetingsService.createNewMeeting(
-            meeting_id, title, description, time, date, participants
+            title, description, time, date, participants
         );
         res.status(201).json(newMeeting);
     } catch (error) {
@@ -68,7 +67,7 @@ const createNewMeeting = async (req, res, next) => {
 };
 
 const deleteMeeting = async (req, res, next) => {
-    const id = req.params.meeting_id;
+    const id = req.params.id;
 
     try {
         if (!id) {

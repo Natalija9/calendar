@@ -1,0 +1,27 @@
+.form {
+    width: 50%;
+    margin: 40px auto;
+  }
+  .group {
+    margin-bottom: 20px;
+  }
+  .input {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: sans-serif;
+  }
+  .input:focus {
+    border-color: blue;
+  }
+  .label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  .error {
+    border-color: red;
+  }
+  

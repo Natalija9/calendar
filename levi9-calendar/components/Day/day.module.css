@@ -1,7 +1,9 @@
 .cell {
+    margin: 25px;
+    border-top: 2px solid black;
     font-size: large;
     color: gray;
-    width: 250px;
+    width: 200px;
     height: 100px;
     padding: 15px;
 }

@@ -1,0 +1,31 @@
+.btn {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    background-color: black;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    font-size: large;
+    font-family: sans-serif;
+  }
+  .btn:hover {
+    background-color: #333;
+  }
+  .secondary {
+    color: #333;
+    border: 1px solid #ccc;
+    background-color: transparent;
+  }
+  .secondary:hover {
+    background-color: #eee;
+  }
+  .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  

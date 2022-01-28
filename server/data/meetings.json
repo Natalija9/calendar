@@ -1,0 +1,23 @@
+[
+    {
+        "title" : "Verovatnoca",
+        "description" : "Ispit",
+        "time" : "13:00",
+        "date" : "19",
+        "participants" : ["Natalija", "Jovana"]
+    },
+    {
+        "title" : "Levi9",
+        "description" : "Projekat",
+        "time" : "17:00",
+        "date" : "24",
+        "participants" : ["Natalija", "Jovana", "Lucija"]
+    },
+    {
+        "title" : "PZV",
+        "description" : "Ispit",
+        "time" : "17:00",
+        "date" : "24",
+        "participants" : ["Natalija", "Lucija"]
+    }
+]

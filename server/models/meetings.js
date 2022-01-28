@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const meetingSchema = new mongoose.Schema({
-    meeting_id: {
-        type: mongoose.Schema.Types.Number,
+    _id: {
+        type: mongoose.Schema.Types.ObjectId,
         required: true
     },
     title: {

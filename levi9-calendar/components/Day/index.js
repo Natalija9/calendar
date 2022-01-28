@@ -1,26 +1,35 @@
-import React, { useRef, useEffect, useContext } from 'react';
-import Link from 'next/link';
-import { truncate } from '../../utils';
-import { ThemeContext } from '../Layout';
-import styles from './day.module.css';
-import { Table } from 'semantic-ui-react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-const Day = ( {date}, {days} ) => {
-  const wrapper = useRef(null);
-  const theme = useContext(ThemeContext);
+const Day = ({date}) => {
+  const [meetings, setMeetings] = useState([]);
+
+  const router = useRouter();
+
+  if(date === "") {
+    return <td></td>
+  }
+
   useEffect(() => {
-    console.log('theme', theme);
-  }, [theme]);
+    fetch('http://localhost:5000/api/meetings/date/' + date)
+      .then((res) => res.json())
+    .then((json) => {setMeetings(json);})
+  }, []);
 
   return (
+    
+    <td className='day'>
+      <div className='main'>
 
-    <Table.Cell selectable className={styles.cell}>
-          {date}
-    </Table.Cell>
+      {date}
+      <div >
+      {meetings.length ? meetings?.map((x, i) => <p onClick={() => router.push('/meeting/' + x._id)} key={i} className='meeting'>{x.title}</p>) : <></>}
+      </div>
+    
+      </div>
 
-    // <div ref={wrapper} className={styles.text}>
-    //   Cao
-    // </div>
+    </td>
+
   );
 };
 
