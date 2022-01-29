@@ -1,5 +1,6 @@
 const express = require('express');
 const meetingsRouter = require('./routes/api/meetings');
+const usersRouter = require('./routes/api/users');
 const { urlencoded, json } = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -38,6 +39,7 @@ app.use(function (req, res, next) {
 app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use('/api/meetings', meetingsRouter);
+app.use('/api/users', usersRouter);
 
 app.use(function (req, res, next) {
   const error = new Error('Zahtev nije podrzan!');
