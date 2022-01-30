@@ -1,21 +1,16 @@
 // import React, { useCallback } from 'react';
 import { useRouter } from 'next/router';
-// import { useSelector, useDispatch } from 'react-redux';
+import AddNewMeeting from '../AddNewMeeting';
+import React, { useState, useEffect } from 'react';
+
 import Day from '../Day';
-// import { Table } from 'semantic-ui-react';
-// import Button from '../Button';
-// import { increment, decrement } from '../../store/slices/counterSlice';
-import {styles} from './month.module.css';
-// import { getUser } from '../../store/slices/userSlice';
 
-const Month = () => {
-  // const callback = useCallback(() => console.log('foo'), []);
+const Month = ({openModal}) => {
   const router = useRouter();
-  // const state = useSelector((state) => state);
-  // const dispatch = useDispatch();
-  // const { data, pending, error } = useSelector((state) => state.user);
+  
 
-  // console.log('data', data);
+
+
   const month = [["", "", "", "", "", "01", "02"],
   ["03", "04", "05", "06", "07", "08", "09"],
   ["10", "11", "12", "13", "14", "15", "16"],
@@ -44,15 +39,18 @@ const Month = () => {
           <tr key={index} >
             {week?.map((day, index) => (
               <Day key={index} date={day}
+
+              openModal={
+                openModal
+              }
+
               />
             ))}
           </tr>
         ))}
         </tbody>
       </table>
-      {/* <div className={styles['btn-wrapper']}>
-        <Button onClick={() => router.push('/new')}>Add new</Button>
-      </div> */}
+      
 
     </>
   );

@@ -35,8 +35,40 @@ h2 {
   font-size: x-large;
   display: flex;
   flex-direction: column;
+  max-width: 250px;
   gap: 10px;
 }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position:fixed;
+  background: white;
+  width: 60%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+  padding: 20px;
+
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
 
 p, li {
   font-size: x-large;
@@ -56,6 +88,11 @@ th {
   text-align: left;
 }
 
+.time {
+  font-size: large;
+  text-align: left;
+  margin: 20px;
+}
 
 .day {
   margin: 70px;
@@ -66,6 +103,8 @@ th {
   color: gray;
   width: 270px;
   height: 180px;
+  max-width: 270px;
+  max-height: 180px;
   padding: 15px;
   flex-direction: column;
 }
