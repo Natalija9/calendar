@@ -1,15 +1,8 @@
-// import React, { useCallback } from 'react';
-import { useRouter } from 'next/router';
-import AddNewMeeting from '../AddNewMeeting';
 import React, { useState, useEffect } from 'react';
 
 import Day from '../Day';
 
 const Month = ({openModal}) => {
-  const router = useRouter();
-  
-
-
 
   const month = [["", "", "", "", "", "01", "02"],
   ["03", "04", "05", "06", "07", "08", "09"],

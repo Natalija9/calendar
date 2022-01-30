@@ -16,10 +16,24 @@ const Id = () => {
       .then((json) => { setMeeting(json); })
   }, [id]);
 
+  const deleteMeeting = (meeting) => {
+    const options = {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      query: JSON.stringify(meeting._id),
+    };
+
+    console.log(meeting._id);
+
+    fetch("http://localhost:5000/api/meetings/" + meeting._id, options)
+      .then(router.back());
+  };
+
 
   return (
     <div>
       <h1>Meeting details</h1>
+
 
       <div className='show'>
         <div className='details'>
@@ -33,8 +47,8 @@ const Id = () => {
         </div>
 
         <div className='details'>
-        <h2>Time:</h2>
-        <p>{meeting.time}h</p>
+          <h2>Time:</h2>
+          <p>{meeting.time}h</p>
 
         </div>
 
@@ -44,7 +58,9 @@ const Id = () => {
         </div>
 
         <div className='details'>
-          <Button>Delete meeting</Button>
+          <Button onClick={() => deleteMeeting(meeting)}>Delete meeting</Button>
+
+          <Button onClick={() => router.back()} >Go back</Button>
         </div>
 
 

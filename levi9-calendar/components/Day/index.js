@@ -19,7 +19,7 @@ const Day = ({ date, openModal }) => {
 
   return (
 
-    <td className='day' onDoubleClick={() => openModal(date)}>
+    <td className='day' onDoubleClick={() => openModal()}>
       <div className='main'>
 
         {date}

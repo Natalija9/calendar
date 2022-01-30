@@ -6,9 +6,6 @@ import React, { useState, useEffect } from 'react';
 export default function Home() {
 
   const [modalShow, toggleModal] = useState(false);
-  const [newMeetngDate, setDate] = useState([]);
-
-
 
   return (
     <>

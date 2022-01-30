@@ -80,8 +80,7 @@ const AddNewMeeting = ({ show, closeModal }) => {
 
     fetch("http://localhost:5000/api/meetings/new", options)
       .then((res) => res.json())
-      .then((data) => {router.push("/meeting/" + data._id);
-          console.log(data)});
+      .then((data) => router.push("/meeting/" + data._id));
   };
 
 
@@ -90,8 +89,6 @@ const AddNewMeeting = ({ show, closeModal }) => {
 
     <div className={showHideClassName}>
       <section className="modal-main">
-
-
 
         <form
           className={styles.form}
@@ -156,7 +153,6 @@ const AddNewMeeting = ({ show, closeModal }) => {
 
           <Button type="submit">Submit</Button>
         </form>
-
 
 
       </section>
