@@ -8,7 +8,6 @@ const Id = () => {
 
   const router = useRouter();
   const { id } = router.query;
-  console.log(id);
 
   useEffect(() => {
     fetch('http://localhost:5000/api/meetings/' + id)
@@ -16,16 +15,14 @@ const Id = () => {
       .then((json) => { setMeeting(json); })
   }, [id]);
 
-  const deleteMeeting = (meeting) => {
+  const deleteMeeting = () => {
     const options = {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
-      query: JSON.stringify(meeting._id),
+      query: JSON.stringify(id),
     };
 
-    console.log(meeting._id);
-
-    fetch("http://localhost:5000/api/meetings/" + meeting._id, options)
+    fetch("http://localhost:5000/api/meetings/" + id, options)
       .then(router.back());
   };
 
@@ -47,7 +44,8 @@ const Id = () => {
         </div>
 
         <div className='details'>
-          <h2>Time:</h2>
+          <h2>Date and time:</h2>
+          <p>{meeting.date}.01.2022.</p>
           <p>{meeting.time}h</p>
 
         </div>
@@ -58,9 +56,9 @@ const Id = () => {
         </div>
 
         <div className='details'>
-          <Button onClick={() => deleteMeeting(meeting)}>Delete meeting</Button>
+          <Button onClick={() => deleteMeeting()}>Delete meeting</Button>
 
-          <Button onClick={() => router.back()} >Go back</Button>
+          <Button onClick={() => router.back()}>Go back</Button>
         </div>
 
 

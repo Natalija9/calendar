@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import React, { useState, useEffect, useRef } from 'react';
 
 
-const AddNewMeeting = ({ show, closeModal }) => {
+const AddNewMeeting = ({ show, closeModal, date }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
   console.log(showHideClassName);
 
@@ -13,7 +13,6 @@ const AddNewMeeting = ({ show, closeModal }) => {
   const [desc, setDesc] = useState('');
   const [time, setTime] = useState('');
   const [partic, setPartic] = useState([]);
-  const [date, setDate] = useState('');
 
   const [allParticipants, setAllParticipants] = useState([]);
   const router = useRouter();
@@ -113,16 +112,6 @@ const AddNewMeeting = ({ show, closeModal }) => {
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
             ></textarea>
-          </div>
-          <div className={styles.group}>
-            <label className={styles.label}>Date</label>
-            <input
-              className={`${styles.input} ${!validate(date) ? styles.error : ''}`}
-              type="text"
-              placeholder="Enter date..."
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
           </div>
           <div className={styles.group}>
             <label className={styles.label}>Time</label>

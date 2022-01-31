@@ -19,16 +19,18 @@ const Day = ({ date, openModal }) => {
 
   return (
 
-    <td className='day' onDoubleClick={() => openModal()}>
+    <td className='day' onDoubleClick={() => {
+      openModal(date);
+    }}>
       <div className='main'>
 
         {date}
         <div >
-          {meetings.length ? meetings?.map((x, i) => 
-                <div key={i}> 
-                    <p onClick={() => router.push('/meeting/' + x._id)} className='meeting'>{x.title}</p> 
-                    <p className='time'>{x.time}h</p> 
-                </div>) : <></>}
+          {meetings.length ? meetings?.map((x, i) =>
+            <div key={i}>
+              <p onClick={() => router.push('/meeting/' + x._id)} className='meeting'>{x.title}</p>
+              <p className='time'>{x.time}h</p>
+            </div>) : <></>}
         </div>
 
       </div>
