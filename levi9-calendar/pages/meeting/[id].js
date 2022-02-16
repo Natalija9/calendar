@@ -10,7 +10,7 @@ const Id = () => {
   const { id } = router.query;
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/meetings/' + id)
+    fetch(`http://localhost:5000/api/meetings/${id}`)
       .then((res) => res.json())
       .then((json) => { setMeeting(json); })
   }, [id]);
@@ -22,7 +22,7 @@ const Id = () => {
       query: JSON.stringify(id),
     };
 
-    fetch("http://localhost:5000/api/meetings/" + id, options)
+    fetch(`http://localhost:5000/api/meetings/${id}`, options)
       .then(router.back());
   };
 

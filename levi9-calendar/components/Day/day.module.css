@@ -7,3 +7,56 @@
     height: 100px;
     padding: 15px;
 }
+
+
+.main {
+    display: flex;
+    column-gap: 10px;
+    text-align: left;
+  }
+
+
+
+  .time {
+    font-size: large;
+    text-align: left;
+    margin: 20px;
+  }
+  
+  .day {
+    margin: 70px;
+    border-top: 2px solid black;
+    text-align: left;
+    font-size: large;
+    font-family: 'sans-serif';
+    color: gray;
+    width: 270px;
+    height: 180px;
+    max-width: 270px;
+    max-height: 180px;
+    padding: 15px;
+    flex-direction: column;
+  }
+  
+  .day:hover {
+    background-color: #f2f2f2;
+    font-size: x-large;
+    color: black;
+    border-width: 4px;
+  }
+  
+  .meeting {
+    display: flex;
+    flex-direction: row;
+    font-size: x-large;
+    font-family: 'sans-serif';
+    text-align: left;
+    color: #6a656e;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  
+  .meeting:hover {
+    color: #8a3a9c;
+  }
+  

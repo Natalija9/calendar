@@ -6,8 +6,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 
 const AddNewMeeting = ({ show, closeModal, date }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
-  console.log(showHideClassName);
+  let showHideClassName = show ? "modal display-block" : "modal display-none";
 
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
@@ -79,7 +78,7 @@ const AddNewMeeting = ({ show, closeModal, date }) => {
 
     fetch("http://localhost:5000/api/meetings/new", options)
       .then((res) => res.json())
-      .then((data) => router.push("/meeting/" + data._id));
+      .then((data) => router.push(`/meeting/${data._id}`));
   };
 
 
@@ -106,7 +105,7 @@ const AddNewMeeting = ({ show, closeModal, date }) => {
           <div className={styles.group}>
             <label className={styles.label}>Description</label>
             <textarea
-              className={styles.input}
+              className={`${styles.input} ${!validate(title) ? styles.error : ''}`}
               placeholder="Enter description..."
               rows={5}
               value={desc}

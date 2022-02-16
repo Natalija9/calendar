@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styles from './day.module.css';
 import { useRouter } from 'next/router';
 
 const Day = ({ date, openModal }) => {
@@ -12,24 +13,24 @@ const Day = ({ date, openModal }) => {
   }
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/meetings/date/' + date)
+    fetch(`http://localhost:5000/api/meetings/date/${date}`)
       .then((res) => res.json())
       .then((json) => { setMeetings(json); })
   }, []);
 
   return (
 
-    <td className='day' onDoubleClick={() => {
+    <td className={styles.day} onDoubleClick={() => {
       openModal(date);
     }}>
-      <div className='main'>
+      <div className={styles.main}>
 
         {date}
         <div >
           {meetings.length ? meetings?.map((x, i) =>
             <div key={i}>
-              <p onClick={() => router.push('/meeting/' + x._id)} className='meeting'>{x.title}</p>
-              <p className='time'>{x.time}h</p>
+              <p onClick={() => router.push(`/meeting/${x._id}`)} className={styles.meeting}>{x.title}</p>
+              <p className={styles.time}>{x.time}h</p>
             </div>) : <></>}
         </div>
 
@@ -40,4 +41,4 @@ const Day = ({ date, openModal }) => {
   );
 };
 
-export default React.memo(Day);
+export default Day;
