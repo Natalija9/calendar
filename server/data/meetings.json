@@ -2,28 +2,28 @@
     {
         "title" : "Citaonica",
         "description" : "Ispitni rok, mora da se uci",
-        "time" : "11:00",
+        "time" : "11:00h",
         "date" : "04",
         "participants" : ["Natalija", "Jovana", "Lucija", "Danilo"]
     },
     {
         "title" : "Verovatnoca",
         "description" : "Ispit",
-        "time" : "13:00",
+        "time" : "13:00h",
         "date" : "19",
         "participants" : ["Natalija", "Jovana"]
     },
     {
         "title" : "Levi9",
         "description" : "Projekat",
-        "time" : "17:00",
+        "time" : "17:00h",
         "date" : "24",
         "participants" : ["Natalija", "Jovana", "Lucija"]
     },
     {
         "title" : "PZV",
         "description" : "Ispit",
-        "time" : "17:00",
+        "time" : "17:00h",
         "date" : "24",
         "participants" : ["Natalija", "Lucija"]
     }

@@ -16,7 +16,7 @@ export default function Home() {
           setDate(date);
         }}
       />
-      <AddNewMeeting show={modalShow} closeModal={() => toggleModal(false)} date={date}></AddNewMeeting>
+      <AddNewMeeting show={modalShow} closeModal={() => toggleModal(false)} date={date}/>
 
     </>)
 }

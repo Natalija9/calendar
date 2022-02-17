@@ -2,11 +2,6 @@ const mongoose = require('mongoose');
 const Meeting = require('../models/meetings');
 
 
-const getAllMeetings = async () => {
-  const meetings = await Meeting.find({}).exec();
-  return meetings;
-};
-
 const getMeetingById = async (id) => {
     const meeting = await Meeting.findOne({ _id: id}).exec();
     return meeting;
@@ -37,7 +32,6 @@ const deleteMeeting = async (id) => {
 }
 
 module.exports = {
-    getAllMeetings,
     getMeetingById,
     getMeetingsByDate,
     createNewMeeting,

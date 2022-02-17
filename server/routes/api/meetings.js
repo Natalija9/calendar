@@ -3,7 +3,6 @@ const meetingsController = require('../../controllers/meetings');
 
 const router = express.Router();
 
-router.get('/', meetingsController.getAllMeetings);
 router.get('/:id', meetingsController.getMeetingById);
 router.get('/date/:date', meetingsController.getMeetingsByDate);
 

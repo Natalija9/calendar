@@ -6,7 +6,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 
 const AddNewMeeting = ({ show, closeModal, date }) => {
-  let showHideClassName = show ? "modal display-block" : "modal display-none";
+  let showHideClassName = show ? styles.show : styles.hide;
 
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
@@ -86,7 +86,7 @@ const AddNewMeeting = ({ show, closeModal, date }) => {
   return (
 
     <div className={showHideClassName}>
-      <section className="modal-main">
+      <section className={styles.modal}>
 
         <form
           className={styles.form}
@@ -99,7 +99,7 @@ const AddNewMeeting = ({ show, closeModal, date }) => {
               type="text"
               placeholder="Enter title..."
               value={title}
-              onChange={(e) => title.length < 10 && setTitle(e.target.value)}
+              onChange={(e) => title.length < 15 && setTitle(e.target.value)}
             />
           </div>
           <div className={styles.group}>

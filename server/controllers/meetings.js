@@ -1,14 +1,5 @@
 const meetingsService = require('../services/meetings');
 
-const getAllMeetings = async (req, res, next) => {
-    try {
-        const allMeetings = await meetingsService.getAllMeetings();
-        res.status(200).json(allMeetings);
-    } catch (error) {
-        next(error);
-    }
-};
-
 const getMeetingById = async (req, res, next) => {
     const id = req.params.id;
 
@@ -37,7 +28,7 @@ const getMeetingsByDate = async (req, res, next) => {
         const meetings = await meetingsService.getMeetingsByDate(date);
         res.status(200).json(meetings);
     } catch (error) {
-        next(errot);
+        next(error);
     }
 };
 
@@ -59,7 +50,7 @@ const createNewMeeting = async (req, res, next) => {
         const newMeeting = await meetingsService.createNewMeeting(
             title, description, time, date, participants
         );
-        res.status(201).json(newMeeting);
+        res.status(200).json(newMeeting);
     } catch (error) {
         next(error);
     }
@@ -91,7 +82,6 @@ const deleteMeeting = async (req, res, next) => {
 };
 
 module.exports = {
-    getAllMeetings,
     getMeetingById,
     getMeetingsByDate,
     createNewMeeting,

@@ -15,14 +15,14 @@ const Day = ({ date, openModal }) => {
   useEffect(() => {
     fetch(`http://localhost:5000/api/meetings/date/${date}`)
       .then((res) => res.json())
-      .then((json) => { setMeetings(json); })
+      .then((json) => setMeetings(json))
   }, []);
 
   return (
 
     <td className={styles.day} onDoubleClick={() => {
       openModal(date);
-    }}>
+      }}>
       <div className={styles.main}>
 
         {date}
@@ -30,7 +30,7 @@ const Day = ({ date, openModal }) => {
           {meetings.length ? meetings?.map((x, i) =>
             <div key={i}>
               <p onClick={() => router.push(`/meeting/${x._id}`)} className={styles.meeting}>{x.title}</p>
-              <p className={styles.time}>{x.time}h</p>
+              <p className={styles.time}>{x.time}</p>
             </div>) : <></>}
         </div>
 

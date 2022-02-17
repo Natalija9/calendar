@@ -12,8 +12,8 @@ const Id = () => {
   useEffect(() => {
     fetch(`http://localhost:5000/api/meetings/${id}`)
       .then((res) => res.json())
-      .then((json) => { setMeeting(json); })
-  }, [id]);
+      .then((data) => setMeeting(data))
+  }, []);
 
   const deleteMeeting = () => {
     const options = {
@@ -32,7 +32,7 @@ const Id = () => {
       <h1>Meeting details</h1>
 
 
-      <div className='show'>
+      <div className='show-details'>
         <div className='details'>
           <h2>Title:</h2>
           <p>{meeting.title}</p>
@@ -46,7 +46,7 @@ const Id = () => {
         <div className='details'>
           <h2>Date and time:</h2>
           <p>{meeting.date}.01.2022.</p>
-          <p>{meeting.time}h</p>
+          <p>{meeting.time}</p>
 
         </div>
 
