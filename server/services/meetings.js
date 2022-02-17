@@ -19,6 +19,7 @@ const getMeetingsByDate = async (date) => {
 
 const createNewMeeting = async (title, description, time, date, participants) => {
     const newMeeting = new Meeting({
+        _id: new mongoose.Types.ObjectId,
         title,
         description,
         time,

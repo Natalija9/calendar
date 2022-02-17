@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const meetingSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     title: {
         type: mongoose.Schema.Types.String,
         required: true
